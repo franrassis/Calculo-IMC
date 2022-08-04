@@ -1,0 +1,80 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="utf-8">
+        <title>IMC</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <script type="text/javascript">
+        function calcular(){
+    		
+    		var formulario = document.getElementById("formulario");	
+    		
+    		
+    		var kilos  		= +formulario.kilos.value;
+    		var metros 		= +formulario.metros.value;
+    		var centimetros = +formulario.centimetros.value;
+    		
+     		
+    		var altura = (metros * 100 + centimetros) / 100;
+    		 
+    		
+    		var imc = kilos / (altura * altura);
+    		
+       		formulario.imc.value = imc.toFixed(2);
+    		
+    		if(imc >16 && imc <= 16, 9)
+            {
+    			alert('Você esta abaixo do peso!');
+    		} 
+    		else if(imc >17 && imc <= 18,5)
+    		{
+    			alert("Abaixo do peso");
+    		}
+    		else if(imc >18,5 && imc <= 24,9)
+    		{
+    			alert("Peso Normal");
+    		}
+    		else if(imc >25 && imc <= 29)
+    		{
+    			alert("Acima do Peso");
+    		}
+    		else if(imc >30 && imc <= 34,9)
+    		{
+    			alert("Obesidade SGrau I");
+    		}
+    		else if(imc >35 && imc <= 40)
+    		{
+    			alert("Obesidade Grau II");
+    		}
+    		else
+    		{
+    			alert('Obesidade Grau III');
+    		}
+    	}
+    </script>
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calculo IMC</legend>
+    	
+        <label for="kilos">Kilos:</label>
+        <input name="kilos" type="text" />
+    <p></p>
+        <label for="metros">Metros:</label>
+        <input name="metros" type="text" />
+    
+        <label for="centimetros">Centímetros:</label>
+        <input name="centimetros" type="text" />
+        <p></p>
+        <label for="imc">IMC:</label>
+        <input name="imc" type="text" disabled="disabled" />
+        <p></p>  
+        <div class="button"></div>
+        <button type="submit" a href="#" onclick="calcular();">Calcular</a></div></button>
+    </fieldset>
+    </form>
+</body>
+</html>
